@@ -3627,12 +3627,12 @@ Note: Your fingerprint may be less secure than a strong pattern or PIN"</string>
     <string name="oneplus_mobile_device_name_title">Phone name</string>
     <string name="oneplus_mode_choose">Mode selection</string>
     <string name="oneplus_mode_settings">Alert slider settings</string>
-    <string name="oneplus_model_18865_for_cn" />
-    <string name="oneplus_model_18865_for_cn_cmittid" />
-    <string name="oneplus_model_18865_for_eu" />
-    <string name="oneplus_model_18865_for_in" />
-    <string name="oneplus_model_18865_for_tmo" />
-    <string name="oneplus_model_18865_for_us" />
+    <string name="oneplus_model_18865_for_cn">HD1900</string>
+    <string name="oneplus_model_18865_for_cn_cmittid">2019CP7230</string>
+    <string name="oneplus_model_18865_for_eu">HD1903</string>
+    <string name="oneplus_model_18865_for_in">HD1901</string>
+    <string name="oneplus_model_18865_for_tmo">HD1907</string>
+    <string name="oneplus_model_18865_for_us">HD1905</string>
     <string name="oneplus_model_19801_for_cn">HD1910</string>
     <string name="oneplus_model_19801_for_cn_cmittid">2019CP7231</string>
     <string name="oneplus_model_19801_for_eu">HD1913</string>
@@ -7030,4 +7030,6 @@ Update settings to:
     <item type="string" name="APKTOOL_DUMMY_f9b">false</item>
     <item type="string" name="APKTOOL_DUMMY_f9c">false</item>
     <item type="string" name="APKTOOL_DUMMY_15df">false</item>
+    <string name="oneplus_hd_project_camera_info_hotdogb">48+16+12 MP Triple Camera</string>
+    <string name="oneplus_hd_project_screen_info_hotdogb">90Hz Fluid AMOLED 6.55″ Display</string>
 </resources>

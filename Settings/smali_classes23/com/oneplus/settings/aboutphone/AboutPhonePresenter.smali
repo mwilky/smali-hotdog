@@ -1427,152 +1427,247 @@
 .end method
 
 .method private getCameraInfo()Ljava/lang/String;
-    .locals 3
+    .registers 5
 
-    const-string v0, "none"
+    .line 90
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v1, "A60"
 
-    const-string v2, "A60"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_c6
 
-    if-nez v1, :cond_6
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v1, "A50"
 
-    const-string v2, "A50"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_16
 
-    if-eqz v1, :cond_0
+    goto/16 :goto_c6
 
-    goto/16 :goto_0
-
-    :cond_0
+    .line 93
+    :cond_16
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOP3T()Z
 
+    move-result v0
+
+    const-string v1, "string"
+
+    if-eqz v0, :cond_2b
+
+    .line 94
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_3t_camera_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120ba8
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_1
+    return-object v0
 
-    :cond_1
+    .line 96
+    :cond_2b
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOP3()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_3e
+
+    .line 97
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_3_camera_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120ba7
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_1
+    return-object v0
 
-    :cond_2
+    .line 99
+    :cond_3e
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->is18857Project()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_51
+
+    .line 100
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_18857_camera_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120ba3
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_1
+    return-object v0
 
-    :cond_3
+    .line 102
+    :cond_51
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuaProject()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_64
+
+    .line 103
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_7_camera_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-eqz v1, :cond_4
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120ba9
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_1
+    return-object v0
 
-    :cond_4
+    .line 105
+    :cond_64
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHDProject()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_5
+    const-string v2, "mwilky"
+
+    if-eqz v0, :cond_8b
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
 
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHotdogb()Z
+
+    move-result v3
+
+    and-int/2addr v0, v3
+
+    if-eqz v0, :cond_8b
+
+    .line 106
+    const-string v0, "camera = oneplus_hd_project_camera_info_hotdogb"
+
+    invoke-static {v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 107
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_hd_project_camera_info_hotdogb"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-nez v1, :cond_5
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120d57
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_1
+    return-object v0
 
-    :cond_5
+    .line 108
+    :cond_8b
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHDProject()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a9
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
+
+    move-result v0
+
+    if-nez v0, :cond_a9
+
+    .line 109
+    const-string v0, "camera = oneplus_hd_project_camera_info"
+
+    invoke-static {v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 110
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_hd_project_camera_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 112
+    :cond_a9
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOP_19_2nd()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_7
+    if-eqz v0, :cond_c3
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_b6
+
+    goto :goto_c3
+
+    .line 115
+    :cond_b6
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_19_2nd_camera_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-nez v1, :cond_7
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120ba4
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_1
+    return-object v0
 
-    :cond_6
-    :goto_0
+    .line 113
+    :cond_c3
+    :goto_c3
+    const-string v0, "none"
+
+    return-object v0
+
+    .line 91
+    :cond_c6
+    :goto_c6
     const-string v0, "16 + 20 MP Dual Camera"
 
-    :cond_7
-    :goto_1
     return-object v0
 .end method
 
@@ -1693,180 +1788,251 @@
 .end method
 
 .method private getScreenInfo()Ljava/lang/String;
-    .locals 3
+    .registers 4
 
-    const-string v0, "none"
+    .line 63
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v1, "ONEPLUS A6000"
 
-    const-string v2, "ONEPLUS A6000"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result v0
 
-    move-result v1
+    if-nez v0, :cond_c5
 
-    if-nez v1, :cond_8
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v1, "ONEPLUS A6003"
 
-    const-string v2, "ONEPLUS A6003"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_16
 
-    if-eqz v1, :cond_0
+    goto/16 :goto_c5
 
-    goto/16 :goto_2
+    .line 66
+    :cond_16
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    :cond_0
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    const-string v1, "ONEPLUS A5010"
 
-    const-string v2, "ONEPLUS A5010"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_23
 
-    if-eqz v1, :cond_1
-
+    .line 67
     const-string v0, "Optic AMOLED 6.01\u201d Display"
 
-    goto/16 :goto_3
+    return-object v0
 
-    :cond_1
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    .line 69
+    :cond_23
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v2, "A50"
+    const-string v1, "A50"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_7
+    if-nez v0, :cond_c2
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v2, "A30"
+    const-string v1, "A30"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2
+    if-eqz v0, :cond_39
 
-    goto :goto_1
+    goto/16 :goto_c2
 
-    :cond_2
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    .line 72
+    :cond_39
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v2, "ONEPLUS A6010"
+    const-string v1, "ONEPLUS A6010"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_6
+    if-nez v0, :cond_bf
 
-    sget-object v1, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
 
-    const-string v2, "ONEPLUS A6013"
+    const-string v1, "ONEPLUS A6013"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_6
+    if-nez v0, :cond_bf
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->is18857Project()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_54
 
-    goto :goto_0
+    goto :goto_bf
 
-    :cond_3
+    .line 75
+    :cond_54
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isGuaProject()Z
 
+    move-result v0
+
+    const-string v1, "string"
+
+    if-eqz v0, :cond_69
+
+    .line 76
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_7_screen_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-eqz v1, :cond_4
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120baa
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_3
+    return-object v0
 
-    :cond_4
+    .line 78
+    :cond_69
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHDProject()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_5
+    if-eqz v0, :cond_89
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
 
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHotdogb()Z
+
+    move-result v2
+
+    and-int/2addr v0, v2
+
+    if-eqz v0, :cond_89
+
+    .line 79
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_hd_project_screen_info_hotdogb"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-nez v1, :cond_5
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120d59
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_3
+    return-object v0
 
-    :cond_5
+    .line 80
+    :cond_89
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHDProject()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a2
+
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
+
+    move-result v0
+
+    if-nez v0, :cond_a2
+
+    .line 81
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_hd_project_screen_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 83
+    :cond_a2
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOP_19_2nd()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_9
+    if-eqz v0, :cond_bc
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
 
+    move-result v0
+
+    if-eqz v0, :cond_af
+
+    goto :goto_bc
+
+    .line 86
+    :cond_af
+    iget-object v0, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
+
+    const-string v2, "oneplus_19_2nd_screen_info"
+
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
     move-result v1
 
-    if-nez v1, :cond_9
-
-    iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mActivity:Landroid/app/Activity;
-
-    const v2, 0x7f120ba6
-
-    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_3
+    return-object v0
 
-    :cond_6
-    :goto_0
+    .line 84
+    :cond_bc
+    :goto_bc
+    const-string v0, "none"
+
+    return-object v0
+
+    .line 73
+    :cond_bf
+    :goto_bf
     const-string v0, "Optic AMOLED 6.41\u201d Display"
 
-    goto :goto_3
+    return-object v0
 
-    :cond_7
-    :goto_1
+    .line 70
+    :cond_c2
+    :goto_c2
     const-string v0, "Optic AMOLED 5.5\u201d Display"
 
-    goto :goto_3
+    return-object v0
 
-    :cond_8
-    :goto_2
+    .line 64
+    :cond_c5
+    :goto_c5
     const-string v0, "Optic AMOLED 6.28\u201d Display"
 
-    :cond_9
-    :goto_3
     return-object v0
 .end method
 
@@ -2220,159 +2386,277 @@
 .end method
 
 .method private showHardwareInfo()V
-    .locals 7
+    .registers 8
 
+    .line 137
     invoke-static {}, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->is7TMCLVersionProject()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "drawable"
+
+    if-eqz v0, :cond_16
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPThemeUtils;->isSupportMclTheme()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_16
 
-    const v0, 0x7f08018b
+    .line 138
+    const-string v0, "hd_mcl"
 
-    goto/16 :goto_1
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_0
+    move-result v0
+
+    .local v0, "phoneImageResId":I
+    goto/16 :goto_c7
+
+    .line 139
+    .end local v0    # "phoneImageResId":I
+    :cond_16
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHDProject()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_31
 
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    xor-int/lit8 v0, v0, 0x1
 
-    const v0, 0x7f08042b
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHotdogb()Z
 
-    goto/16 :goto_1
+    move-result v2
 
-    :cond_1
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+    and-int/2addr v0, v2
 
-    const-string v1, "ONEPLUS A6000"
+    if-eqz v0, :cond_31
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    .line 140
+    const-string v0, "oneplus_other_hotdogb"
 
-    move-result v0
-
-    if-nez v0, :cond_a
-
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const-string v1, "ONEPLUS A6003"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    .restart local v0    # "phoneImageResId":I
+    goto/16 :goto_c7
 
-    goto :goto_0
-
-    :cond_2
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const-string v1, "ONEPLUS A5000"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    .line 141
+    .end local v0    # "phoneImageResId":I
+    :cond_31
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isHDProject()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    const-string v2, "oneplus_other"
 
-    const v0, 0x7f080421
+    if-eqz v0, :cond_45
 
-    goto :goto_1
-
-    :cond_3
-    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
-
-    const-string v1, "ONEPLUS A5010"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isMEARom()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-nez v0, :cond_45
 
-    const v0, 0x7f080422
+    .line 142
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    move-result v0
 
-    :cond_4
+    .restart local v0    # "phoneImageResId":I
+    goto/16 :goto_c7
+
+    .line 143
+    .end local v0    # "phoneImageResId":I
+    :cond_45
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v3, "ONEPLUS A6000"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    const-string v3, "oneplus_6"
+
+    if-nez v0, :cond_c3
+
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v4, "ONEPLUS A6003"
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5d
+
+    goto/16 :goto_c3
+
+    .line 145
+    :cond_5d
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v4, "ONEPLUS A5000"
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6e
+
+    .line 146
+    const-string v0, "oneplus_5"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
+
+    .line 147
+    .end local v0    # "phoneImageResId":I
+    :cond_6e
+    sget-object v0, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+    const-string v4, "ONEPLUS A5010"
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7f
+
+    .line 148
+    const-string v0, "oneplus_5t"
+
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
+
+    .line 149
+    .end local v0    # "phoneImageResId":I
+    :cond_7f
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOP3()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_8c
 
-    const v0, 0x7f08041f
+    .line 150
+    const-string v0, "oneplus_3"
 
-    goto :goto_1
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_5
+    move-result v0
+
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
+
+    .line 151
+    .end local v0    # "phoneImageResId":I
+    :cond_8c
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->isOP3T()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_99
 
-    const v0, 0x7f080420
+    .line 152
+    const-string v0, "oneplus_3t"
 
-    goto :goto_1
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_6
+    move-result v0
+
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
+
+    .line 153
+    .end local v0    # "phoneImageResId":I
+    :cond_99
     invoke-static {}, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->isGuaLiftCameraProject()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_a6
 
-    const v0, 0x7f080428
+    .line 154
+    const-string v0, "oneplus_gua_lift_camera"
 
-    goto :goto_1
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_7
+    move-result v0
+
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
+
+    .line 155
+    .end local v0    # "phoneImageResId":I
+    :cond_a6
     invoke-static {}, Lcom/oneplus/settings/utils/OPUtils;->is18857Project()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_b3
 
-    const v0, 0x7f08041e
+    .line 156
+    const-string v0, "oneplus_18857"
 
-    goto :goto_1
+    invoke-static {v0, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_8
+    move-result v0
+
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
+
+    .line 157
+    .end local v0    # "phoneImageResId":I
+    :cond_b3
     invoke-static {}, Lcom/oneplus/settings/utils/OPAuthenticationInformationUtils;->isOlder6tProducts()Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_be
 
-    const v0, 0x7f08042b
+    .line 158
+    invoke-static {v2, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_1
+    move-result v0
 
-    :cond_9
-    const v0, 0x7f080423
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
 
-    goto :goto_1
+    .line 160
+    .end local v0    # "phoneImageResId":I
+    :cond_be
+    invoke-static {v3, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_a
-    :goto_0
-    const v0, 0x7f080423
+    move-result v0
 
-    :goto_1
+    .restart local v0    # "phoneImageResId":I
+    goto :goto_c7
+
+    .line 144
+    .end local v0    # "phoneImageResId":I
+    :cond_c3
+    :goto_c3
+    invoke-static {v3, v1}, Lcom/android/wubydax/GearUtils;->getIdentifier(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 162
+    .restart local v0    # "phoneImageResId":I
+    :goto_c7
     iget-object v1, p0, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->mView:Lcom/oneplus/settings/aboutphone/Contract$View;
 
     invoke-direct {p0}, Lcom/oneplus/settings/aboutphone/AboutPhonePresenter;->getCameraInfo()Ljava/lang/String;
@@ -2395,6 +2679,7 @@
 
     invoke-interface/range {v1 .. v6}, Lcom/oneplus/settings/aboutphone/Contract$View;->displayHardWarePreference(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 163
     return-void
 .end method
 

@@ -3329,4 +3329,10 @@
         <item>16</item>
         <item>17</item>
     </string-array>
+    <string-array name="oneplus_hotdogb_projects">
+        <item>@string/oneplus_model_18865_for_cn</item>
+        <item>@string/oneplus_model_18865_for_in</item>
+        <item>@string/oneplus_model_18865_for_eu</item>
+        <item>@string/oneplus_model_18865_for_us</item>
+    </string-array>
 </resources>
